@@ -1,16 +1,35 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import AboutSection from "@/components/AboutSection";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import CoursesSection from "@/components/CoursesSection";
+import DiscoverScuba from "@/components/DiscoverScuba";
+import PricingSection from "@/components/PricingSection";
+import FunDiving from "@/components/FunDiving";
+import StaySection from "@/components/StaySection";
+import TestimonialsPreview from "@/components/TestimonialsPreview";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
+import Bubbles from "@/components/Bubbles";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
-  return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
-  );
-};
-
-const Index = PlaceholderIndex;
+const Index = () => (
+  <div className="min-h-screen ocean-section relative">
+    <Bubbles />
+    <Navbar />
+    <main>
+      <Hero />
+      <AboutSection />
+      <WhyChooseUs />
+      <CoursesSection />
+      <DiscoverScuba />
+      <PricingSection />
+      <FunDiving />
+      <StaySection />
+      <TestimonialsPreview />
+      <ContactSection />
+    </main>
+    <Footer />
+  </div>
+);
 
 export default Index;
