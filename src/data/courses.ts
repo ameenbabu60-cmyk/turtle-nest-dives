@@ -1,3 +1,10 @@
+export interface CoursePackage {
+  name: string;
+  price: string;
+  tag?: string;
+  features: string[];
+}
+
 export interface Course {
   id: string;
   title: string;
@@ -9,6 +16,7 @@ export interface Course {
   includes: string[];
   requirements: string[];
   image: string;
+  packages: CoursePackage[];
 }
 
 export const courses: Course[] = [
@@ -23,6 +31,24 @@ export const courses: Course[] = [
     includes: ["PADI eLearning access", "3 confined water dives", "2 open water dives", "All equipment rental", "PADI certification card", "Underwater photos"],
     requirements: ["Minimum age: 15 years", "Ability to swim 200m", "Basic health fitness", "No prior experience needed"],
     image: "course-scuba-diver",
+    packages: [
+      {
+        name: "Basic",
+        price: "₹15,000",
+        features: ["PADI eLearning access", "3 confined water dives", "2 open water dives", "Equipment rental", "PADI certification card"],
+      },
+      {
+        name: "Premium",
+        price: "₹19,000",
+        tag: "Popular",
+        features: ["Everything in Basic", "Underwater photos & video", "Extra practice dive", "Dive logbook", "Turtle Nest Scuba T-shirt"],
+      },
+      {
+        name: "VIP",
+        price: "₹24,000",
+        features: ["Everything in Premium", "Private instructor (1-on-1)", "GoPro footage on USB", "Lunch included daily", "Airport pickup & drop"],
+      },
+    ],
   },
   {
     id: "padi-open-water",
@@ -35,6 +61,24 @@ export const courses: Course[] = [
     includes: ["PADI eLearning access", "5 confined water sessions", "4 open water dives", "All equipment rental", "PADI certification card", "Dive logbook", "Underwater photos & video"],
     requirements: ["Minimum age: 15 years", "Ability to swim 200m", "Float/tread water for 10 minutes", "Basic health fitness"],
     image: "course-open-water",
+    packages: [
+      {
+        name: "Standard",
+        price: "₹25,000",
+        features: ["PADI eLearning access", "5 confined water sessions", "4 open water dives", "Equipment rental", "PADI certification card", "Dive logbook"],
+      },
+      {
+        name: "Premium",
+        price: "₹32,000",
+        tag: "Best Value",
+        features: ["Everything in Standard", "Underwater photos & video", "2 bonus fun dives", "Nitrox awareness briefing", "Turtle Nest Scuba kit bag"],
+      },
+      {
+        name: "Ultimate",
+        price: "₹42,000",
+        features: ["Everything in Premium", "Private instructor", "GoPro footage on USB", "Daily meals included", "Accommodation (3 nights)", "Airport transfers"],
+      },
+    ],
   },
   {
     id: "padi-advanced-open-water",
@@ -47,6 +91,19 @@ export const courses: Course[] = [
     includes: ["5 adventure dives", "Deep dive to 30m", "Navigation dive", "3 elective dives", "All equipment rental", "PADI certification card"],
     requirements: ["PADI Open Water Diver certification", "Minimum age: 15 years", "Basic health fitness"],
     image: "course-advanced",
+    packages: [
+      {
+        name: "Standard",
+        price: "₹20,000",
+        features: ["5 adventure dives", "Deep dive to 30m", "Navigation dive", "3 elective dives", "Equipment rental", "PADI certification"],
+      },
+      {
+        name: "Explorer",
+        price: "₹27,000",
+        tag: "Popular",
+        features: ["Everything in Standard", "Night dive included", "Wreck dive included", "Underwater photography session", "HD dive video"],
+      },
+    ],
   },
   {
     id: "emergency-first-responder",
@@ -59,6 +116,19 @@ export const courses: Course[] = [
     includes: ["Primary care (CPR) training", "Secondary care (First Aid)", "AED training", "Emergency oxygen delivery", "EFR certification card", "EFR manual"],
     requirements: ["No prerequisites", "Minimum age: 12 years", "Interest in emergency care"],
     image: "course-efr",
+    packages: [
+      {
+        name: "Standard",
+        price: "₹8,000",
+        features: ["CPR training", "First Aid training", "AED training", "EFR certification card", "EFR manual"],
+      },
+      {
+        name: "Complete",
+        price: "₹12,000",
+        tag: "Recommended",
+        features: ["Everything in Standard", "Emergency oxygen delivery", "Care for Children module", "Refresher session after 3 months", "First aid kit included"],
+      },
+    ],
   },
   {
     id: "rescue-diver",
@@ -71,6 +141,19 @@ export const courses: Course[] = [
     includes: ["Rescue scenarios & exercises", "Self-rescue techniques", "Emergency management training", "Equipment rescue skills", "All equipment rental", "PADI certification card"],
     requirements: ["PADI Advanced Open Water certification", "EFR certification (within 24 months)", "Minimum age: 15 years"],
     image: "course-rescue",
+    packages: [
+      {
+        name: "Standard",
+        price: "₹22,000",
+        features: ["Rescue scenarios & exercises", "Self-rescue techniques", "Emergency management training", "Equipment rental", "PADI certification"],
+      },
+      {
+        name: "Pro Prep",
+        price: "₹30,000",
+        tag: "Best Value",
+        features: ["Everything in Standard", "Extra rescue practice day", "Divemaster orientation session", "Underwater search & recovery intro", "HD training video", "Daily meals"],
+      },
+    ],
   },
   {
     id: "divemaster",
@@ -83,6 +166,19 @@ export const courses: Course[] = [
     includes: ["Comprehensive dive theory", "Water skills assessments", "Practical training scenarios", "Internship experience", "All equipment rental", "PADI Divemaster certification", "Professional-level materials"],
     requirements: ["PADI Rescue Diver certification", "EFR within 24 months", "40 logged dives minimum", "Medical clearance", "Minimum age: 18 years"],
     image: "course-divemaster",
+    packages: [
+      {
+        name: "Standard",
+        price: "₹55,000",
+        features: ["Comprehensive dive theory", "Water skills assessments", "Practical training scenarios", "Internship experience", "Equipment rental", "PADI Divemaster certification"],
+      },
+      {
+        name: "Career Launch",
+        price: "₹75,000",
+        tag: "Most Popular",
+        features: ["Everything in Standard", "Extended internship (2 extra weeks)", "Job placement assistance", "Professional resume building", "Accommodation included", "Daily meals", "IDC preparation overview"],
+      },
+    ],
   },
   {
     id: "zero-to-hero",
@@ -95,5 +191,18 @@ export const courses: Course[] = [
     includes: ["All courses: OW to Divemaster", "Complete eLearning package", "All equipment rental", "Accommodation assistance", "Professional-level certification", "Lifetime mentorship", "Job placement assistance"],
     requirements: ["Minimum age: 18 years", "Ability to swim 200m", "Medical clearance", "Passion for the ocean"],
     image: "course-open-water",
+    packages: [
+      {
+        name: "Standard",
+        price: "₹1,10,000",
+        features: ["All courses: OW to Divemaster", "Complete eLearning package", "Equipment rental throughout", "PADI certifications at every level", "Dive logbook"],
+      },
+      {
+        name: "All-Inclusive",
+        price: "₹1,45,000",
+        tag: "Best Deal",
+        features: ["Everything in Standard", "Full accommodation (8-10 weeks)", "Daily meals", "Airport transfers", "Lifetime mentorship", "Job placement assistance", "Branded dive gear set"],
+      },
+    ],
   },
 ];

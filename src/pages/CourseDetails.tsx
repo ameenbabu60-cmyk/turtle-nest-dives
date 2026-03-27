@@ -82,6 +82,58 @@ const CourseDetails = () => {
             </motion.div>
           </div>
 
+          {/* Packages Section */}
+          <div className="mt-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-heading text-3xl font-bold mb-8 text-center"
+            >
+              Choose Your <span className="gradient-text">Package</span>
+            </motion.h2>
+            <div className={`grid gap-8 ${course.packages.length === 2 ? 'md:grid-cols-2 max-w-3xl mx-auto' : 'md:grid-cols-3'}`}>
+              {course.packages.map((pkg, i) => (
+                <motion.div
+                  key={pkg.name}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className={`glass-card rounded-xl p-8 relative flex flex-col ${pkg.tag ? 'ring-2 ring-primary shadow-[0_0_30px_hsl(187_80%_48%/0.2)]' : ''}`}
+                >
+                  {pkg.tag && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-primary-foreground font-body text-xs font-semibold">
+                      {pkg.tag}
+                    </div>
+                  )}
+                  <h3 className="font-heading text-xl font-bold mb-1">{pkg.name}</h3>
+                  <div className="font-heading text-3xl font-bold gradient-text mb-6">{pkg.price}</div>
+                  <ul className="space-y-3 flex-1">
+                    {pkg.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-3 font-body text-foreground/70 text-sm">
+                        <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Check className="text-primary" size={12} />
+                        </div>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href="/#contact"
+                    className={`mt-6 inline-flex justify-center px-6 py-3 rounded-full font-body font-semibold text-sm transition-all duration-500 ${
+                      pkg.tag
+                        ? 'bg-primary text-primary-foreground hover:shadow-[0_0_30px_hsl(187_80%_48%/0.5)]'
+                        : 'border border-primary/40 text-foreground hover:bg-primary/10'
+                    }`}
+                  >
+                    Choose {pkg.name}
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-8 mt-16">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="glass-card p-8 rounded-xl">
               <h2 className="font-heading text-2xl font-bold mb-6">What's Included</h2>
