@@ -20,7 +20,7 @@ const imageMap: Record<string, string> = {
 };
 
 const CoursesSection = () => {
-  const displayCourses = courses.slice(0, 6);
+  const displayCourses = courses.filter(c => c.id !== "discover-scuba-diving").slice(0, 6);
 
   return (
     <section id="courses" className="py-24 relative">
