@@ -26,8 +26,8 @@ const MobileBottomNav = () => {
   };
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden glass-card border-t border-border/50 pb-[env(safe-area-inset-bottom)]">
-      <div className="flex items-center justify-around h-14">
+    <nav className="fixed bottom-0 left-0 right-0 z-[70] border-t border-white/10 bg-background/92 shadow-[0_-10px_32px_rgba(0,0,0,0.28)] backdrop-blur-xl supports-[backdrop-filter]:bg-background/78 md:hidden pb-[env(safe-area-inset-bottom)]">
+      <div className="mx-auto flex h-14 max-w-screen-sm items-center justify-around px-2">
         {navItems.map((item) => {
           const active = isActive(item.to);
           const linkTo = item.to.startsWith("/#") ? "/" : item.to;
@@ -36,7 +36,7 @@ const MobileBottomNav = () => {
               key={item.label}
               to={linkTo}
               onClick={() => handleClick(item.to)}
-              className={`flex flex-col items-center justify-center gap-0.5 flex-1 h-full transition-colors ${
+              className={`flex h-full flex-1 flex-col items-center justify-center gap-0.5 rounded-xl transition-colors ${
                 active ? "text-primary" : "text-foreground/50"
               }`}
             >

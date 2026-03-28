@@ -30,8 +30,8 @@ const Navbar = ({ onBookNow }: NavbarProps) => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-border/50">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+    <nav className="fixed left-0 right-0 top-0 z-[70] border-b border-white/10 bg-background/78 shadow-[0_10px_40px_rgba(0,0,0,0.22)] backdrop-blur-xl supports-[backdrop-filter]:bg-background/62">
+      <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <Link to="/" className="flex items-center gap-2">
           <img src={logo} alt="Turtle Nest Scuba Logo" className="h-12 w-auto" />
         </Link>
@@ -73,7 +73,7 @@ const Navbar = ({ onBookNow }: NavbarProps) => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass-card border-t border-border/30 overflow-hidden"
+            className="overflow-hidden border-t border-white/10 bg-background/95 shadow-[0_16px_40px_rgba(0,0,0,0.28)] backdrop-blur-xl md:hidden"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
               {navLinks.map((link) => (

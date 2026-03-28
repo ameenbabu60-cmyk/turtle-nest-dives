@@ -19,10 +19,10 @@ const Index = () => {
   const [bookingOpen, setBookingOpen] = useState(false);
 
   return (
-    <div className="min-h-screen ocean-section relative">
+    <div className="relative min-h-screen overflow-x-clip ocean-section">
       <Bubbles />
       <Navbar onBookNow={() => setBookingOpen(true)} />
-      <main className="pb-14 md:pb-0">
+      <main className="overflow-x-clip pb-24 md:pb-0">
         <Hero onBookNow={() => setBookingOpen(true)} />
         <AboutSection />
         <WhyChooseUs />

@@ -44,7 +44,7 @@ const AboutSection = () => (
               height={672}
             />
           </div>
-          <div className="absolute -bottom-6 -left-6 glass-card p-4 rounded-xl">
+          <div className="absolute bottom-4 left-4 max-w-[calc(100%-2rem)] rounded-xl glass-card p-4 md:-bottom-6 md:-left-6 md:max-w-none">
             <p className="font-heading text-3xl font-bold gradient-text">500+</p>
             <p className="font-body text-sm text-foreground/70">Happy Divers</p>
           </div>
