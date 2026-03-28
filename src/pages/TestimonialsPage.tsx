@@ -3,6 +3,7 @@ import { Star, Quote } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Bubbles from "@/components/Bubbles";
+import MobileBottomNav from "@/components/MobileBottomNav";
 
 const testimonials = [
   { name: "Priya Sharma", location: "Mumbai", text: "Amazing experience! The instructors were so patient and professional. Perfect for beginners like me. I felt safe every second underwater. This was hands down the highlight of my Andaman trip!", rating: 5 },
