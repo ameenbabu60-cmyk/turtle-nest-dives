@@ -23,36 +23,36 @@ const CoursesSection = () => {
   const displayCourses = courses.filter(c => c.id !== "discover-scuba-diving").slice(0, 6);
 
   return (
-    <section id="courses" className="py-24 relative">
+    <section id="courses" className="py-16 md:py-24 relative">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
-          <h2 className="font-heading text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="font-heading text-2xl md:text-5xl font-bold mb-3">
             PADI Scuba Diving Courses <span className="gradient-text">for All Levels</span>
           </h2>
-          <p className="font-body text-foreground/60 text-lg max-w-2xl mx-auto">
+          <p className="font-body text-foreground/60 text-sm md:text-lg max-w-2xl mx-auto">
             Explore globally recognized scuba certifications designed for beginners to professionals.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
           {displayCourses.map((course, i) => (
             <motion.div
               key={course.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ delay: i * 0.08 }}
             >
               <Link
                 to={`/courses/${course.id}`}
-                className="block glass-card rounded-xl overflow-hidden group hover:shadow-[0_0_40px_hsl(187_80%_48%/0.15)] transition-all duration-500"
+                className="block glass-card rounded-xl overflow-hidden group hover:shadow-[0_0_40px_hsl(187_80%_48%/0.15)] transition-all duration-500 h-full"
               >
-                <div className="relative overflow-hidden h-48">
+                <div className="relative overflow-hidden h-28 md:h-48">
                   <img
                     src={imageMap[course.image]}
                     alt={`${course.title} - PADI scuba diving course`}
@@ -61,21 +61,23 @@ const CoursesSection = () => {
                     width={800}
                     height={544}
                   />
-                  <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-primary/90 text-primary-foreground font-body text-xs font-semibold">
+                  <div className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-primary/90 text-primary-foreground font-body text-[9px] md:text-xs font-semibold">
                     {course.level}
                   </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="font-heading text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                <div className="p-3 md:p-6">
+                  <h3 className="font-heading text-xs md:text-xl font-semibold mb-1 md:mb-2 group-hover:text-primary transition-colors line-clamp-2 leading-tight">
                     {course.title}
                   </h3>
-                  <div className="flex items-center gap-2 text-foreground/50 text-sm font-body mb-3">
-                    <Clock size={14} /> {course.duration}
-                    <span className="ml-auto font-semibold text-primary">{course.price}</span>
+                  <div className="flex items-center gap-1 text-foreground/50 text-[10px] md:text-sm font-body mb-1 md:mb-3">
+                    <Clock size={10} className="md:w-3.5 md:h-3.5" /> {course.duration}
                   </div>
-                  <p className="font-body text-foreground/60 text-sm leading-relaxed mb-4">{course.description}</p>
-                  <span className="inline-flex items-center gap-1 text-primary font-body text-sm font-semibold group-hover:gap-2 transition-all">
-                    Learn More <ArrowRight size={14} />
+                  <div className="font-semibold text-primary text-xs md:text-sm font-body mb-1 md:mb-3">
+                    {course.price}
+                  </div>
+                  <p className="font-body text-foreground/60 text-[10px] md:text-sm leading-relaxed mb-2 md:mb-4 line-clamp-2 hidden md:block">{course.description}</p>
+                  <span className="inline-flex items-center gap-1 text-primary font-body text-[10px] md:text-sm font-semibold group-hover:gap-2 transition-all">
+                    Learn More <ArrowRight size={12} className="md:w-3.5 md:h-3.5" />
                   </span>
                 </div>
               </Link>
@@ -83,12 +85,12 @@ const CoursesSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-8 md:mt-12">
           <Link
             to="/courses"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-primary/40 text-foreground font-body font-semibold hover:bg-primary/10 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full border border-primary/40 text-foreground font-body font-semibold text-sm hover:bg-primary/10 transition-all duration-300"
           >
-            View All Courses <ArrowRight size={18} />
+            View All Courses <ArrowRight size={16} />
           </Link>
         </div>
       </div>
