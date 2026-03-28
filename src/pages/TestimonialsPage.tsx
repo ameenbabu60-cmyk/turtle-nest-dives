@@ -21,7 +21,7 @@ const TestimonialsPage = () => (
   <div className="min-h-screen ocean-section relative">
     <Bubbles />
     <Navbar />
-    <main className="pt-24 pb-16">
+    <main className="pt-24 pb-20 md:pb-16">
       <div className="container mx-auto px-4">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
           <h1 className="font-heading text-4xl md:text-6xl font-bold mb-4">
