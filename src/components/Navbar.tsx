@@ -11,7 +11,11 @@ const navLinks = [
   { to: "/#contact", label: "Contact" },
 ];
 
-const Navbar = () => {
+interface NavbarProps {
+  onBookNow?: () => void;
+}
+
+const Navbar = ({ onBookNow }: NavbarProps) => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
@@ -44,13 +48,16 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <Link
-            to="/#pricing"
-            onClick={() => handleNavClick("/#pricing")}
+          <button
+            type="button"
+            onClick={() => {
+              setOpen(false);
+              onBookNow?.();
+            }}
             className="px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-body font-semibold text-sm tracking-wide hover:shadow-[0_0_20px_hsl(187_80%_48%/0.4)] transition-all duration-300"
           >
             Book Now
-          </Link>
+          </button>
         </div>
 
         {/* Mobile toggle */}
@@ -79,13 +86,16 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                to="/#pricing"
-                onClick={() => handleNavClick("/#pricing")}
+              <button
+                type="button"
+                onClick={() => {
+                  setOpen(false);
+                  onBookNow?.();
+                }}
                 className="px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-body font-semibold text-sm text-center"
               >
                 Book Now
-              </Link>
+              </button>
             </div>
           </motion.div>
         )}

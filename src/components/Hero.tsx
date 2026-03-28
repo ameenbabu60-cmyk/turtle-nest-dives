@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
-const Hero = () => {
+interface HeroProps {
+  onBookNow?: () => void;
+}
+
+const Hero = ({ onBookNow }: HeroProps) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video background */}
@@ -57,12 +61,13 @@ const Hero = () => {
             and unforgettable diving experiences.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="#pricing"
+            <button
+              type="button"
+              onClick={onBookNow}
               className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-body font-semibold text-lg tracking-wide hover:shadow-[0_0_30px_hsl(187_80%_48%/0.5)] transition-all duration-500 hover:scale-105"
             >
               Book Your Dive
-            </a>
+            </button>
             <a
               href="#courses"
               className="px-8 py-4 rounded-full border border-primary/40 text-foreground font-body font-semibold text-lg tracking-wide hover:bg-primary/10 transition-all duration-500"

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
@@ -12,26 +13,32 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Bubbles from "@/components/Bubbles";
 import MobileBottomNav from "@/components/MobileBottomNav";
+import BookingModal from "@/components/BookingModal";
 
-const Index = () => (
-  <div className="min-h-screen ocean-section relative">
-    <Bubbles />
-    <Navbar />
-    <main className="pb-14 md:pb-0">
-      <Hero />
-      <AboutSection />
-      <WhyChooseUs />
-      <CoursesSection />
-      <DiscoverScuba />
-      {/* <PricingSection /> */}
-      <FunDiving />
-      <StaySection />
-      <TestimonialsPreview />
-      <ContactSection />
-    </main>
-    <Footer />
-    <MobileBottomNav />
-  </div>
-);
+const Index = () => {
+  const [bookingOpen, setBookingOpen] = useState(false);
+
+  return (
+    <div className="min-h-screen ocean-section relative">
+      <Bubbles />
+      <Navbar onBookNow={() => setBookingOpen(true)} />
+      <main className="pb-14 md:pb-0">
+        <Hero onBookNow={() => setBookingOpen(true)} />
+        <AboutSection />
+        <WhyChooseUs />
+        <CoursesSection />
+        <DiscoverScuba />
+        {/* <PricingSection /> */}
+        <FunDiving />
+        <StaySection />
+        <TestimonialsPreview />
+        <ContactSection />
+      </main>
+      <Footer />
+      <MobileBottomNav />
+      <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
+    </div>
+  );
+};
 
 export default Index;
