@@ -58,7 +58,7 @@ const DiscoverScuba = () => (
             ))}
           </ul>
           <a
-            href="#pricing"
+            href="/courses/discover-scuba-diving"
             className="inline-flex px-8 py-4 rounded-full bg-primary text-primary-foreground font-body font-semibold text-lg hover:shadow-[0_0_30px_hsl(187_80%_48%/0.5)] transition-all duration-500"
           >
             Start Your First Dive
