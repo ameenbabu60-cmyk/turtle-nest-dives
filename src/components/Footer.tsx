@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "@/assets/turtle_nest_logo.png";
 
 const Footer = () => (
-  <footer className="border-t border-border/30 pt-16 pb-8 relative">
+  <footer className="relative border-t border-border/30 pt-16 pb-24 md:pb-8">
     <div className="container mx-auto px-4">
       <div className="grid md:grid-cols-4 gap-10 mb-12">
         <div className="md:col-span-2">

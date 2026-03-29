@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import "../BookingModal.mobile.css";
 import { courses } from "@/data/courses";
 
 interface BookingModalProps {
@@ -99,7 +100,7 @@ const BookingModal = ({ open, onClose, defaultCourse = "", defaultPackage = "" }
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative w-full sm:max-w-lg max-h-[92vh] overflow-y-auto glass-card rounded-t-2xl sm:rounded-2xl border border-border/50 shadow-[0_0_60px_hsl(var(--primary)/0.15)]"
+            className="relative w-full sm:max-w-lg max-h-[92vh] overflow-y-auto glass-card rounded-t-2xl sm:rounded-2xl border border-border/50 shadow-[0_0_60px_hsl(var(--primary)/0.15)] booking-modal-mobile-hide-scrollbar"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}

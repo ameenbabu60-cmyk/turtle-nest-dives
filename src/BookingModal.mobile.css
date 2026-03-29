@@ -1,0 +1,9 @@
+@media (max-width: 640px) {
+  .booking-modal-mobile-hide-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+  }
+  .booking-modal-mobile-hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Webkit */
+  }
+}
